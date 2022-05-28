@@ -3,7 +3,7 @@
 # count_words("The cake is done. It is a big cake!") 
 # --> {"cake":2, "big":1, "is":2, "the":1, "a":1, "it":1}
 
-def read_file_content():
+def read_file_content(filename):
     text = open("story.txt", "r")
     read_text = text.read()
 
@@ -11,12 +11,10 @@ def read_file_content():
     
     return read_text
 
-check = read_file_content()
+check = read_file_content("./story.txt")
 print(check)
 def count_words():
-    # text = read_file_content("./story.txt")
-    # text = read_file_content("story.txt")
-    text = read_file_content()
+    text = read_file_content("./story.txt")
     for char in "-.,?\n":
         text = text.replace(char, ' ')
     words = text.lower()
